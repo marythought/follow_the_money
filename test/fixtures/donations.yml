@@ -2,13 +2,13 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  amount: 1
-  donor_id: 
-  organization_id: 
+  amount: 5000
+  donor_id:
+  organization_id:
   date: 2015-09-17
 
 two:
-  amount: 1
-  donor_id: 
-  organization_id: 
+  amount: 10000
+  donor_id:
+  organization_id:
   date: 2015-09-17

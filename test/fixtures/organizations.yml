@@ -2,7 +2,7 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  name: Goats United
 
 two:
-  name: MyString
+  name: Adopt A Cat
