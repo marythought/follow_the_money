@@ -1,0 +1,7 @@
+<h2><%= @organization.name %></h2>
+
+<% @organization.donations.each do |donation| %>
+  <ul>
+    <li>$<%= donation.amount %> on <%= donation.date %> by <%= link_to donation.donor.name, donor_path(donation.donor.id) %></li>
+  </ul>
+<% end %>

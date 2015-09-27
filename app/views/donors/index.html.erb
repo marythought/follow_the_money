@@ -1,0 +1,10 @@
+<h1>Donors</h1>
+
+<% @donors.each do |donor| %>
+  <ul>
+    <li><%= link_to donor.name, donor %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'New Donation', new_donation_path %>
+<%= link_to 'Back', donations_path %>
