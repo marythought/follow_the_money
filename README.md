@@ -25,3 +25,10 @@ Run `rake test` to test.
 ## License
 
 MIT/X11
+
+## TODOs
+
+* display donor and organization alphabetically
+* add ability to add a donor or organization
+* make default values for donor and org in "edit" view match the donation values being edited
+

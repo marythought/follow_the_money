@@ -1,4 +1,9 @@
+<%= link_to 'New Donation', new_donation_path(@donation) %>
 
-Search bar donors
+<h2>Recent donations:</h2>
 
-Search bar organizations
+<% @donations.each do |donation| %>
+  <ul>
+    <li><%= donation.donor.name %> to <%= donation.organization.name %> in the amount of $<%= donation.amount %> on <%= donation.date %>.</li>
+  </ul>
+<% end %>

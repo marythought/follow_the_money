@@ -9,18 +9,32 @@ class OrganizationsController < ApplicationController
   end
 
   def new
+    @organization = Organization.new
   end
 
   def edit
   end
 
   def create
+    @organization = Organization.new(organization_params)
+    if @organization.save
+      flash[:success] = 'Organization added!'
+      redirect_to @organization
+    else
+      flash[:notice] = "Organization could not be saved"
+      render :new
+    end
   end
 
   def update
   end
 
   def destroy
+    @organization.destroy
+    respond_to do |format|
+      format.html { redirect_to organizations_path, notice: 'Organization was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private

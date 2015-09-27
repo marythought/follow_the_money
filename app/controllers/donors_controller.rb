@@ -9,18 +9,32 @@ class DonorsController < ApplicationController
   end
 
   def new
+    @donor = Donor.new
   end
 
   def edit
   end
 
   def create
+    @donor = Donor.new(donor_params)
+    if @donor.save
+      flash[:success] = 'Donor added!'
+      redirect_to @donor
+    else
+      flash[:notice] = "Donor could not be saved"
+      render :new
+    end
   end
 
   def update
   end
 
   def destroy
+    @donor.destroy
+    respond_to do |format|
+      format.html { redirect_to donors_path, notice: 'Donor was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private

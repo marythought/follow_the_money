@@ -1,5 +1,7 @@
 class DonationsController < ApplicationController
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
+  before_action :set_donor, only: [:create, :edit]
+  before_action :set_organization, only: [:create, :edit]
 
   def index
     @donations = Donation.all
@@ -7,6 +9,8 @@ class DonationsController < ApplicationController
 
   def new
     @donation = Donation.new
+    @donors = Donor.all
+    @organizations = Organization.all
   end
 
   def edit
@@ -16,6 +20,8 @@ class DonationsController < ApplicationController
   end
 
   def show
+    @organization = @donation.donor
+    @donor = @donation.donor
   end
 
   def create
@@ -40,6 +46,14 @@ class DonationsController < ApplicationController
   end
 
   private
+
+  def set_organization
+    @organization = Organization.find_by(params[:organization_id])
+  end
+
+  def set_donor
+    @donor = Donor.find_by(params[:donor_id])
+  end
 
   def set_donation
     @donation = Donation.find(params[:id])

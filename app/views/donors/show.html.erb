@@ -1,4 +1,6 @@
 <h2><%= @donor.name %></h2>
+<%= link_to 'Edit Donor', edit_donor_path(@donor.id) %>
+<%= link_to 'Destroy Donor', @donor, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% @donor.donations.each do |donation| %>
   <ul>
@@ -7,4 +9,5 @@
 <% end %>
 
 <%= link_to 'New Donation', new_donation_path(@donation) %>
-<%= link_to 'Back', donations_path %>
+
+<%= link_to 'Back', donors_path %>

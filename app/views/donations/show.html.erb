@@ -1,6 +1,6 @@
 $<%= @donation.amount %>
 made on <%= @donation.date %>
-from <%= @donation.donor.name %> to <%= @donation.organization.name %>
+from <%= link_to @donation.donor.name, donor_path(@donation.donor.id) %> to <%= link_to @donation.organization.name, organization_path(@donation.organization.id) %>
 
 <%= link_to 'New Donation', new_donation_path(@donation) %>
 <%= link_to 'Back', donations_path %>

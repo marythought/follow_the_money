@@ -1,7 +1,13 @@
 <h2><%= @organization.name %></h2>
+<%= link_to 'Edit Organization', edit_organization_path(@organization.id) %>
+<%= link_to 'Destroy Organization', @organization, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% @organization.donations.each do |donation| %>
   <ul>
     <li>$<%= donation.amount %> on <%= donation.date %> by <%= link_to donation.donor.name, donor_path(donation.donor.id) %></li>
   </ul>
 <% end %>
+
+<%= link_to 'New Donation', new_donation_path(@donation) %>
+
+<%= link_to 'Back', organizations_path %>

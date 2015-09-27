@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :organization %><br>
-    <%= f.select :organization_id, options_for_select(@organizations.map{|organization| [organization.name, organization.id]} ) %>
+    <%= f.select :organization_id, options_for_select(@organizations.map{ |organization| [organization.name, organization.id]} ) %>
   </div>
 
   <div class="field">
