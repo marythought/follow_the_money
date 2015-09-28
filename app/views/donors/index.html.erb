@@ -1,10 +1,14 @@
 <h1>Donors</h1>
 
-<% @donors.each do |donor| %>
-  <ul>
-    <li><%= link_to donor.name, donor %></li>
-  </ul>
-<% end %>
+<%= link_to 'New Donor', new_donor_path, class: "button" %>
+<%= link_to 'Back', donations_path, class: "button" %>
 
-<%= link_to 'New Donor', new_donor_path %>
-<%= link_to 'Back', donations_path %>
+<p>
+<ul>
+  <% @donors.each do |donor| %>
+    <li><%= link_to donor.name, donor %> | (<%= donor.organizations.count%>)</li>
+  <% end %>
+</ul>
+</p>
+
+<%= will_paginate %>

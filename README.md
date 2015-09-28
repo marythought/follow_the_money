@@ -13,6 +13,7 @@ Run `rake test` to test.
 * Mary Dickson (https://github.com/marythought)
 
 ## Attribution
+* Custom bullets: http://stackoverflow.com/questions/7698764/custom-bullet-symbol-for-li-elements-in-ul-that-is-a-regular-character-and
 
 ## Contributing
 

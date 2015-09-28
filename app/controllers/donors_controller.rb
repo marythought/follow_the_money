@@ -1,8 +1,8 @@
 class DonorsController < ApplicationController
- before_action :set_donor, only: [:show, :edit, :update, :destroy]
+  before_action :set_donor, only: [:show, :edit, :update, :destroy]
 
   def index
-    @donors = Donor.all
+    @donors = Donor.paginate(page: params[:page], per_page: 20)
   end
 
   def show
@@ -27,6 +27,13 @@ class DonorsController < ApplicationController
   end
 
   def update
+    if @donor.update(donor_params)
+      flash[:success] = "Donor updated!"
+      redirect_to @donor
+    else
+      flash[:notice] = "Donor could not be updated"
+      render :edit
+    end
   end
 
   def destroy

@@ -4,7 +4,7 @@ class DonationsController < ApplicationController
   before_action :set_organization, only: [:create, :edit]
 
   def index
-    @donations = Donation.all
+    @donations = Donation.take(10)
   end
 
   def new
@@ -27,7 +27,7 @@ class DonationsController < ApplicationController
   def create
     @donation = Donation.new(donation_params)
     if @donation.save
-      flash[:success] = 'Donation added!'
+      flash[:notice] = 'Donation added!'
       redirect_to @donation
     else
       flash[:notice] = "Donation could not be saved"
@@ -37,11 +37,19 @@ class DonationsController < ApplicationController
 
   def update
     if @donation.update(donation_params)
-      flash[:success] = "Donation updated!"
+      flash[:notice] = "Donation updated!"
       redirect_to @donation
     else
       flash[:notice] = "Donation could not be updated"
       render :edit
+    end
+  end
+
+  def destroy
+    @donation.destroy
+    respond_to do |format|
+      format.html { redirect_to donations_path, notice: 'Donation was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 

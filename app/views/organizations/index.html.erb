@@ -1,10 +1,14 @@
 <h1>Organizations</h1>
 
-<% @organizations.each do |organization| %>
-  <ul>
-    <li><%= link_to organization.name, organization %></li>
-  </ul>
-<% end %>
+<%= link_to 'New Organization', new_organization_path, class: "button" %>
+<%= link_to 'Back', organizations_path, class: "button" %>
 
-<%= link_to 'New Organization', new_organization_path %>
-<%= link_to 'Back', organizations_path %>
+<p>
+  <ul>
+    <% @organizations.each do |organization| %>
+      <li><%= link_to organization.name, organization %> | (<%= organization.donors.count%>)</li>
+    <% end %>
+  </ul>
+</p>
+
+<%= will_paginate %>

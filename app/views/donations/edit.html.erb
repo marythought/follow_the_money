@@ -1,6 +1,6 @@
 <h2>Edit A Donation</h2>
 
-<p>You are editing information for a donation made by <%= @donation.donor.name %> to <%= @donation.organization.name %> in the amount of $<%= @donation.amount %> on <%= @donation.date %>.<br></p>
+<p>You are editing information for a donation made by <%= @donation.donor.name %> to <%= @donation.organization.name %> in the amount of $<%= @donation.amount %> on <%= @donation.date.strftime("%m/%d/%Y") %>.<br></p>
 
 <%= render 'form' %>
 

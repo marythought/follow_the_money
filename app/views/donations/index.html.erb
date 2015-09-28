@@ -1,9 +1,12 @@
-<%= link_to 'New Donation', new_donation_path(@donation) %>
+<%= link_to 'New Donation', new_donation_path(@donation), class: "button" %>
 
 <h2>Recent donations:</h2>
 
 <% @donations.each do |donation| %>
-  <ul>
-    <li><%= donation.donor.name %> to <%= donation.organization.name %> in the amount of $<%= donation.amount %> on <%= donation.date %>.</li>
+  <ul class="money">
+  <% unless donation.donor == nil || donation.organization == nil %>
+    <li class="money"><%= link_to donation.donor.name, donor_path(donation.donor.id) %> to <%= link_to donation.organization.name, organization_path(donation.organization.id) %> in the amount of $<%= donation.amount %> on <%= donation.date.strftime("%m/%d/%Y") %>.</li>
+  <% end %>
   </ul>
 <% end %>
+

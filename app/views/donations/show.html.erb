@@ -1,6 +1,9 @@
-$<%= @donation.amount %>
-made on <%= @donation.date %>
-from <%= link_to @donation.donor.name, donor_path(@donation.donor.id) %> to <%= link_to @donation.organization.name, organization_path(@donation.organization.id) %>
+<%= link_to 'Edit Donation', edit_donation_path(@donation.id), class: "button tiny" %>
+<%= link_to 'Destroy Donation', @donation, method: :delete, data: { confirm: 'Are you sure?' }, class: "button tiny" %>
 
-<%= link_to 'New Donation', new_donation_path(@donation) %>
-<%= link_to 'Back', donations_path %>
+<p>$<%= @donation.amount %>
+made on <%= @donation.date.strftime("%m/%d/%Y") %>
+from <%= link_to @donation.donor.name, donor_path(@donation.donor.id) %> to <%= link_to @donation.organization.name, organization_path(@donation.organization.id) %></p>
+
+<%= link_to 'New Donation', new_donation_path(@donation), class: "button" %>
+<%= link_to 'Back', donations_path, class: "button" %>

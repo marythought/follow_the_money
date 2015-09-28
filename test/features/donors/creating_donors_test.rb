@@ -1,7 +1,7 @@
 require "test_helper"
 
-feature "EditingDonations" do
+feature "Donors::CreatingDonors" do
   scenario "the test is sound" do
-
+    skip
   end
 end

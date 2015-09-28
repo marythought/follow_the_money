@@ -2,7 +2,7 @@ class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
 
   def index
-    @organizations = Organization.all
+    @organizations = Organization.paginate(page: params[:page], per_page: 20)
   end
 
   def show
@@ -27,6 +27,13 @@ class OrganizationsController < ApplicationController
   end
 
   def update
+    if @organization.update(organization_params)
+      flash[:success] = "Organization updated!"
+      redirect_to @organization
+    else
+      flash[:notice] = "Organization could not be updated"
+      render :edit
+    end
   end
 
   def destroy
