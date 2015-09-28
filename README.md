@@ -29,7 +29,9 @@ MIT/X11
 
 ## TODOs
 
-* display donor and organization alphabetically
-* add ability to add a donor or organization
+* display donor and organizations alphabetically (add last names for individuals or filter them out)
+* DRY up the donor/org overlap
 * make default values for donor and org in "edit" view match the donation values being edited
+* add search bar
+* write tests
 
