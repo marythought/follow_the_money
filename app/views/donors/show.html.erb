@@ -1,0 +1,19 @@
+<h2><%= @donor.name %></h2>
+<%= link_to 'Edit Donor', edit_donor_path(@donor.id), class: "button tiny" %>
+<%= link_to 'Destroy Donor', @donor, method: :delete, data: { confirm: 'Are you sure?' }, class: "button tiny" %>
+
+<% if @donor.donations.count > 0 %>
+  <% @donor.donations.each do |donation| %>
+    <ul>
+      <% unless donation.organization == nil %>
+        <li>$<%= donation.amount %> on <%= donation.date.strftime("%m/%d/%Y") %> to <%= link_to donation.organization.name, organization_path(donation.organization.id) %> | <%= link_to 'Edit', edit_donation_path(donation.id) %> | <%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No donations to show.</p>
+<% end %>
+
+<%= link_to 'New Donation', new_donation_path(@donation), class: "button" %>
+
+<%= link_to 'Back', donors_path, class: "button" %>
