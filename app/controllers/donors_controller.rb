@@ -19,7 +19,7 @@ class DonorsController < ApplicationController
     @donor = Donor.new(donor_params)
     if @donor.save
       flash[:success] = 'Donor added!'
-      redirect_to @donor
+      # redirect_to @donor
     else
       flash[:notice] = "Donor could not be saved"
       render :new
@@ -29,7 +29,7 @@ class DonorsController < ApplicationController
   def update
     if @donor.update(donor_params)
       flash[:success] = "Donor updated!"
-      redirect_to @donor
+      # redirect_to @donor
     else
       flash[:notice] = "Donor could not be updated"
       render :edit

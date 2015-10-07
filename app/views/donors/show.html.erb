@@ -1,5 +1,5 @@
-<h2><%= @donor.name %></h2>
-<%= link_to 'Edit Donor', edit_donor_path(@donor.id), class: "button tiny" %>
+<h2 id="name_headline"><%= @donor.name %></h2>
+<%= link_to 'Edit Donor', edit_donor_path(@donor.id), class: "button tiny", id: "donor_edit_link", remote: true %>
 <%= link_to 'Destroy Donor', @donor, method: :delete, data: { confirm: 'Are you sure?' }, class: "button tiny" %>
 
 <% if @donor.donations.count > 0 %>

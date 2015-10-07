@@ -1,14 +1,14 @@
 <h1>Donors</h1>
 
-<%= link_to 'New Donor', new_donor_path, class: "button" %>
+<%= link_to 'New Donor', new_donor_path, class: "button", id: "new_donor_link", remote: true %>
 <%= link_to 'Back', donations_path, class: "button" %>
 
-<p>
+<div id="donor_index">
 <ul>
   <% @donors.each do |donor| %>
     <li><%= link_to donor.name, donor %> | (<%= donor.organizations.count%>)</li>
   <% end %>
 </ul>
-</p>
+</div>
 
 <%= will_paginate %>
