@@ -26,6 +26,8 @@ class DonationsController < ApplicationController
 
   def create
     @donation = Donation.new(donation_params)
+    @donors = Donor.all
+    @organizations = Organization.all
     if @donation.save
       flash[:notice] = 'Donation added!'
       redirect_to @donation
