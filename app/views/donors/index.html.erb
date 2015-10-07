@@ -6,7 +6,7 @@
 <div id="donor_index">
 <ul>
   <% @donors.each do |donor| %>
-    <li><%= link_to donor.name, donor %> | (<%= donor.organizations.count%>)</li>
+    <%= render @donors %>
   <% end %>
 </ul>
 </div>

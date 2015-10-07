@@ -1,3 +1,4 @@
+<div id="donor_form_id">
 <%= form_for(@donor, remote: true) do |f| %>
   <% if @donor.errors.any? %>
     <div id="error_explanation">
@@ -20,3 +21,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>

@@ -1,0 +1,2 @@
+<li><container id="name"><%= link_to donor.name, donor %> </container>| (<%= donor.organizations.count%>) | <%= link_to 'Edit', edit_donor_path(donor.id), id: 'donor_edit_id', remote: true %> | <%= link_to 'Destroy', donor, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></li>
+
