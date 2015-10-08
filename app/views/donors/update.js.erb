@@ -1,6 +1,5 @@
-$('#donor_form_id').remove();
-$('#donor_edit_id').show();
-$('container#name').replaceWith(<%= link_to donor.name, donor %> );
+$("#donor_form_id").remove();
+$("#donor_<%= @donor.id %>").replaceWith("<%= j render @donor %>");
 
 // replace old name with new name where-ever it appears
 // $('h2#name_headline').replaceWith('<h2 id="name_headline"><%= @donor.name %></h2>');
