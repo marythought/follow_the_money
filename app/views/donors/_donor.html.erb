@@ -1,4 +1,4 @@
-<li id="donor_<%= donor.id %>">
+<li id="<%= dom_id donor %>">
     <%= link_to donor.name, donor %>
   | (<%= donor.organizations.count%>)
   | <%= link_to 'Edit', edit_donor_path(donor.id), id: 'donor_edit_id', remote: true %>

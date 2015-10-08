@@ -41,6 +41,7 @@ class DonorsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to donors_path, notice: 'Donor was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

@@ -10,7 +10,7 @@ By [Mary Dickson](http://www.marydickson.com).
 * Add search (fuzzy)
 * Add default donation date of today
 * Format dollar amounts with correct commas
-* Add AJAX to organizations
+* Add AJAX to organizations and donor delete
 
 ## Usage
 Run `rake test` to test.
