@@ -1,1 +1,1 @@
-$('#donor_edit_id').hide().after('<%= j render("form") %>');
+$("#<%= dom_id @donor %>").html("<%= j render('form') %>")
