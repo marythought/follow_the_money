@@ -12,6 +12,7 @@ By [Mary Dickson](http://www.marydickson.com).
 * Format dollar amounts with correct commas
 * Add AJAX to organizations
 * Update tests to work with AJAX
+* DRY up the donor/org overlap
 
 ## Usage
 Run `rake test` to test.
@@ -34,12 +35,4 @@ Run `rake test` to test.
 ## License
 
 MIT/X11
-
-## TODOs
-
-* display donor and organizations alphabetically (add last names for individuals or filter them out)
-* DRY up the donor/org overlap
-* make default values for donor and org in "edit" view match the donation values being edited
-* add search bar
-* write tests
 
