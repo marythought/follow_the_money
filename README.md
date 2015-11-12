@@ -3,14 +3,15 @@
 By [Mary Dickson](http://www.marydickson.com).
 
 ## Description
-**$$$** A Rails app showcasing "has many/through" relationships. Tracks donations made from donors
+**$$$** A Rails app showcasing "has many/through" relationships. Tracks donations made from donors. "Browse Donors" tab showcases Rails JavaScript via AJAX to implement CRUD resources in-place. (Also "Add Donation" on main page.)
 
 ## TODOS
 * Add first_name, last_name columns for alphabetizing names
 * Add search (fuzzy)
 * Add default donation date of today
 * Format dollar amounts with correct commas
-* Add AJAX to organizations and donor delete
+* Add AJAX to organizations
+* Update tests to work with AJAX
 
 ## Usage
 Run `rake test` to test.
